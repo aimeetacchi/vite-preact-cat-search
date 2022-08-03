@@ -1,0 +1,48 @@
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#11998e,#38ef7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.cat-grid > div {
+  width: 33.33%;
+}
+
+@media(max-width: 1000px) {
+  .cat-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cat-grid > div {
+    width: 46%;
+  }
+}
+
+@media(max-width: 700px) {
+  .cat-grid {
+    display: block;
+  }
+  .cat-grid > div {
+    width: 100%;
+  }
+}
+
+
+
+
