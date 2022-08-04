@@ -7,9 +7,9 @@ import Search from './components/search/search';
 
 function App() {
 
-  const [catData, setCatData] = useState<Array<Object>>([]);
+  const [catData, setCatData] = useState([]);
   
-   const fetchCats = async (name: string) => {
+   const fetchCats = async (name) => {
     const url = `https://api.api-ninjas.com/v1/cats?name=${name}`;
    
     const headers = {
@@ -34,7 +34,7 @@ function App() {
       <h1>Cat Searching App</h1>
       <Search fetchCats={fetchCats}/>
       <div className="cat-grid">
-        {catData && catData.map((cat : any) => (
+        {catData && catData.map((cat) => (
           <Card key={cat.name} cat={cat}/>
         ))}
       </div>

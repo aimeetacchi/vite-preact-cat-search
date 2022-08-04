@@ -1,19 +1,19 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { FormStyles } from './search.styles'
 
-type Inputs = {
-    catbreed: string,
-  };
+// type Inputs = {
+//     catbreed: string,
+//   };
 
-interface SearchProps {
-    fetchCats: (breed: string) => void;
-}
+// interface SearchProps {
+//     fetchCats: (breed: string) => void;
+// }
 
   
-function Search({fetchCats}: SearchProps) {
+function Search({fetchCats}) {
 
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = (data) =>{
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = (data) =>{
       console.log(data);
       fetchCats(data.catbreed)
     }
